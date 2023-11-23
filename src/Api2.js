@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
-const url = process.env.BACKEND_ENDPOINT + "/api";
+const url = process.env.BACKEND_ENDPOINT + "/api2";
 function App() {
   const [message, setMessage] = useState("");
 

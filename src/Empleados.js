@@ -2,6 +2,7 @@
 import React from "react";
 import "./table.css";
 import axios from "axios"; // uimport axios
+const url = process.env.BACKEND_ENDPOINT + "/employees";
 class App extends React.Component {
     // Constructor
     constructor(props) {
@@ -16,7 +17,7 @@ class App extends React.Component {
     // execute the code
     componentDidMount() {
         axios.get(
-                "http://localhost:5000/employees"
+              url
             )
             .then((res) => {
                 this.setState({

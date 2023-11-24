@@ -1,0 +1,31 @@
+FROM node:20 as build
+
+WORKDIR /app 
+
+ENV PATH /app/node_modules/.bin:$PATH
+
+COPY package*.json ./
+
+RUN npm ci --omit=dev
+
+RUN npm install react-scripts -g --silent
+
+COPY . ./
+
+RUN ls --recursive ./
+
+
+FROM gcr.io/distroless/nodejs20-debian11
+
+ARG BACKEND_ENDPOINT SENTRY_DSN
+ENV BACKEND_ENDPOINT=$BACKEND_ENDPOINT SENTRY_DSN=$SENTRY_DSN
+
+
+COPY --from=build /app /app
+
+WORKDIR /app
+
+CMD ["npm", "start"]
+
+
+

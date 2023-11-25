@@ -11,6 +11,8 @@ import Api2 from "./Api2.js";
 const App = () => {
   return (
     <div style={styles.app}>
+      <p>Elija una opcion:</p>
+      <p></p>
       <Router>
         <Routes>
           <Route path="/" element={<Home />} />

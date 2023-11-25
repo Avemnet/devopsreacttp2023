@@ -1,4 +1,4 @@
-FROM node:20 as build
+FROM node:20-alpine as build
 
 WORKDIR /app 
 
@@ -17,8 +17,6 @@ FROM gcr.io/distroless/nodejs20-debian11
 
 ARG BACKEND_ENDPOINT SENTRY_DSN
 ENV BACKEND_ENDPOINT=$BACKEND_ENDPOINT SENTRY_DSN=$SENTRY_DSN
-
-
 
 COPY --from=build /app /app
 

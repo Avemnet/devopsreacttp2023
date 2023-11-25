@@ -61,7 +61,7 @@ jobs:
             context: .
             file: ./build/Dockerfile.prod
             push: true
-            tags: registry.digitalocean.com/tp-devops-container/tpdevopsfrontend:latest
+            tags: ${{ secrets.DIGITALOCEAN_REGISTRY }}/${{ secrets.DIGITALOCEAN_CONTAINER }}/${{ secrets.DIGITALOCEAN_REPO }}:latest
             labels: ${{ steps.meta.outputs.labels }}
             build-args: |
               BACKEND_ENDPOINT=${{ secrets.BACKEND_ENDPOINT }}

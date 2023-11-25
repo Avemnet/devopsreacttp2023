@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from '/src/App';
-import reportWebVitals from '/src/reportWebVitals';
+import App from './App.js';
+import reportWebVitals from './reportWebVitals.js';
 import * as Sentry from "@sentry/react";
 //import { Integrations } from "@sentry/tracing";
 

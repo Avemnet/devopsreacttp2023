@@ -10,6 +10,8 @@ RUN npm ci --omit=dev
 
 COPY . ./
 
+RUN ls -la --recursive ./
+
 FROM gcr.io/distroless/nodejs20-debian11
 
 ARG BACKEND_ENDPOINT SENTRY_DSN

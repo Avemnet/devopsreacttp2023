@@ -2,7 +2,7 @@
 import React from "react";
 import "./table.css";
 import axios from "axios"; // uimport axios
-const url = process.env.BACKEND_ENDPOINT + "/employees";
+const url = "https://devopstpnjs-app-jbqat.ondigitalocean.app/employees";
 class App extends React.Component {
     // Constructor
     constructor(props) {

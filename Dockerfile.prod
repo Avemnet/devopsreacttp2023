@@ -27,7 +27,7 @@ COPY --from=build /app /app
 
 WORKDIR /app
 
-CMD ["npm" ,"start"]
+CMD ["react-scripts" ,"start"]
 
 
 

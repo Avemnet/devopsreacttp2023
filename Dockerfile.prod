@@ -18,16 +18,11 @@ COPY . ./
 
 RUN ls -la --recursive ./
 
-FROM gcr.io/distroless/nodejs20-debian11
-
 ARG BACKEND_ENDPOINT SENTRY_DSN
 ENV BACKEND_ENDPOINT=$BACKEND_ENDPOINT SENTRY_DSN=$SENTRY_DSN
 
-COPY --from=build /app /app
 
-WORKDIR /app
-
-CMD ["react-scripts" ,"start"]
+CMD ["npm" ,"start"]
 
 
 

@@ -11,6 +11,8 @@ COPY package.json ./
 COPY package-lock.json ./
 RUN npm install --silent
 RUN npm install react-scripts -g --silent
+RUN npm install sentry -g --silent
+RUN npx @sentry/wizard@latest -i sourcemaps
 
 # add app
 COPY . ./

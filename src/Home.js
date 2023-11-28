@@ -9,14 +9,17 @@ const Home = (props) => {
       <h1><center>Pagina Principal</center></h1>
       <hr />
         <center>
-      {/* Button */}
-      <p>
-        <button onClick={() => navigate("/Empleados")}>Listar Empleados</button>
-      </p>
-      {/* Button */}
-      <p>
-        <button onClick={() => navigate("/Api")}>Testear API</button>
-      </p>
+        {/* Button */}
+        <p>
+          <button onClick={() => navigate("/Empleados")}>Listar Empleados</button>
+        </p>
+        {/* Button */}
+        <p>
+          <button onClick={() => navigate("/Api")}>Testear API</button>
+        </p>
+        <p>
+          <button onClick={() => navigate("/Api2")}>Testear API 2</button>
+        </p>
       </center>
     </>
   );

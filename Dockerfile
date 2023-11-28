@@ -1,13 +1,19 @@
 FROM node:20-alpine
 
+# set working directory
 WORKDIR /app
 
-RUN apk add --no-cache libc6-compat
+# add `/app/node_modules/.bin` to $PATH
+ENV PATH /app/node_modules/.bin:$PATH
 
-COPY package*.json ./
+# install app dependencies
+COPY package.json ./
+COPY package-lock.json ./
+RUN npm install --silent
+RUN npm install react-scripts -g --silent
 
-RUN npm install
+# add app
+COPY . ./
 
-COPY . .
-
+# start app
 CMD ["npm", "start"]

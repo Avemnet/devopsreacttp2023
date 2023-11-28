@@ -10,6 +10,12 @@ import * as Sentry from "@sentry/react";
 
 Sentry.init({
   dsn: "https://51a62841dbb152a1ede76c4f4c5b770c@o4506190738096128.ingest.sentry.io/4506233410748416",
+  release: "devops-tp-frontend@2.0.12",
+  dist: "52",
+  enableAutoSessionTracking: true,
+  // Sessions close after app is 10 seconds in the background.
+  sessionTrackingIntervalMillis: 10000,
+  
   integrations: [
     new Sentry.BrowserTracing({
       // Set 'tracePropagationTargets' to control for which URLs distributed tracing should be enabled
